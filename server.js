@@ -39,7 +39,7 @@ app.delete('/delete/task/:task_id',controllers.tasks.delete_task);
 
 app.get('/view/task/:task_id',controllers.tasks.view_task);
 
-app.listen(3012);
+app.listen(process.env.PORT || 3012);
 console.log('------listening on port 3012');
 
 module.exports = sequelize;
