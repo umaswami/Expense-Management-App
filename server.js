@@ -26,6 +26,7 @@ const sequelize = new Sequelize('management', 'root', 'root', {
 app.use(bodyParser.json({limit: '50mb', extended: true}));
 
 app.get('/',function(req,res){  
+    console.log('-----------diremname',__dirname);
      res.sendFile(path.join(__dirname+'/views/home.html'));
 });
 
