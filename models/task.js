@@ -2,11 +2,11 @@ module.exports = function (sequelize, DataTypes) {
 	const task = sequelize.define('task',{
 	Name : {
 		type : DataTypes.STRING(255),
-		validate: {}
+		validate: {notEmpty: true}
 	},
 	Description : {
 		type : DataTypes.STRING(255),
-		validate: {}
+		validate: {notEmpty: true}
 	},
 	Amount : {
 		type : DataTypes.INTEGER,
@@ -15,10 +15,6 @@ module.exports = function (sequelize, DataTypes) {
 },{
 	classMethods : {
 		associates : function(models) {},
-		// get_cities_name : function(req,callback){
-		// 	var sql = "select * from cities limit 1";
-		// 	Sequalize.query(sql,{raw:true});
-		// },
 		tableName: 'task',
 	    timestamps: true,
 	    underscored: true
